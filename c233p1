@@ -1,0 +1,9 @@
+import pandas as pd
+data = pd.read_csv('students_data.csv
+
+df['Total_marks_obtained']=df.iloc[:,["Maths","Science","English"]].sum(3)
+
+data.loc[df['Total_marks_obtained'] > 250, 'Grade'] = 'A'
+data.loc[df['Total_marks_obtained'] < 250, 'Grade'] = 'B'
+
+print(data)
